@@ -8,29 +8,70 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Toolbar"),
-          backgroundColor: Colors.lightBlueAccent,
-        ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              DecoratedBox(decoration: BoxDecoration(gradient: LinearGradient(
-              colors: orangeGradients,
-              begin: Alignment.topLeft,
-              end: Alignment.center),),
-                child: Padding(padding: const EdgeInsets.all(8.0),
-                  child: TextField(decoration: InputDecoration(border: InputBorder.none, hintText: 'Enter you email'),),
+          appBar: AppBar(
+            title: Text("Toolbar"),
+            backgroundColor: Colors.lightBlueAccent,
+          ),
+          body: Center(
+            child: Column(
+              
+              children: <Widget>[
+
+                Container(
+                  child: Padding(padding: const EdgeInsets.all(8.0),
+                    child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: orangeGradients,
+                        begin: Alignment.topLeft,
+                        end: Alignment.center),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter you email'),
+                    ),
+                  ),
+                ),
                 
-                ),  
-              ),         
-            ],
-         ),
-        )
-      ),
+                  ),
+
+                ),
+                Container(
+                  child: Padding(padding: const EdgeInsets.all(8.0),
+                    child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: orangeGradients,
+                        begin: Alignment.topLeft,
+                        end: Alignment.center),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter you password'),
+                    ),
+                  ),
+                ),
+                
+                  ),
+
+                ),
+
+              
+              ],
+            ),
+          ),
+            
+          ),
     );
   }
 }
+
 const List<Color> orangeGradients = [
   Color(0xFFFF9844),
   Color(0xFFFE8853),
