@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-void main()=>runApp(App());
+void main()=>runApp(MyApp());
 
-class App extends StatelessWidget{
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
   
@@ -75,7 +75,7 @@ class MyTextField extends StatelessWidget{
 class MyButton extends StatelessWidget{
   final String buttonText;
 
-   MyButton(this.buttonText);
+  MyButton(this.buttonText);
 
   @override
   Widget build(BuildContext context) {
@@ -83,21 +83,28 @@ class MyButton extends StatelessWidget{
       child: RaisedButton(
         padding: EdgeInsets.all(16),
         child: Text(buttonText), 
-        onPressed: () {
-          
-        },
-      
-        
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenu()));
+        }
       ),
     );
   }
-
+  
 }
+
+
+
 
 class MainMenu extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Main Menu"),
+        ),
+        body: Center(
       child: Container(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -117,6 +124,29 @@ class MainMenu extends StatelessWidget{
             MyButton("Report a Problem")
             
           ],
+        ),
+      ),
+    )
+      )  
+    );
+    
+  }
+
+}
+
+class ReportScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Report a Problem"),      
+        ),
+        body: Center(
+          child: Container(
+            color: Colors.red,
+          ),
         ),
       ),
     );
