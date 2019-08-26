@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              MyHeader("Welcome to Bliss App"),
+              MyHeader("Welcome to the Bliss App"),
               MyTextField("Enter Phone Number or Email"),
               MyButton("Continue")
             //MainMenu()
